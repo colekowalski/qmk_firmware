@@ -6,8 +6,9 @@
 
 #define BASE 0 // default layer
 #define COLM 1
-#define SYMB 2 // symbols
-#define MDIA 3 // media keys
+#define GAME 2 // default with arrow keys
+#define SYMB 3 // symbols
+#define MDIA 4 // media keys
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -53,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         // right hand
         KC_NO,          KC_6,          KC_7,    KC_8,    KC_9,              KC_0,    KC_MINS,
-        TT(SYMB),       KC_Y,          KC_U,    KC_I,    KC_O,              KC_P,    KC_BSLS,
+        TG(GAME),       KC_Y,          KC_U,    KC_I,    KC_O,              KC_P,    KC_BSLS,
         KC_H,           KC_J,          KC_K,    KC_L,    LT(MDIA, KC_SCLN), KC_QUOT,
         TG(COLM),       KC_N,          KC_M,    KC_COMM, KC_DOT,            KC_SLSH, KC_RSFT,
         KC_UP,          KC_DOWN,       KC_LBRC, KC_RBRC, KC_FN1,
@@ -75,10 +76,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         // right hand
         KC_NO,          KC_6,          KC_7,    KC_8,    KC_9,   KC_0,    KC_MINS,
-        TT(SYMB),       KC_J,          KC_L,    KC_U,    KC_Y,   KC_SCLN, KC_BSLS,
+        TG(GAME),       KC_J,          KC_L,    KC_U,    KC_Y,   KC_SCLN, KC_BSLS,
         KC_H,           KC_N,          KC_E,    KC_I,    KC_O,   KC_QUOT,
         TG(COLM),       KC_K,          KC_M,    KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
         KC_UP,          KC_DOWN,       KC_LBRC, KC_RBRC, KC_FN1,
+        KC_RALT,        KC_RCTL,
+        KC_PGUP,
+        GUI_T(KC_PGDN), KC_ENT,        KC_SPC
+    ),
+
+  [GAME] = KEYMAP(
+        // left hand
+        KC_EQL,           KC_1,        KC_2,          KC_3,    KC_4,    KC_5, KC_6,
+        KC_TAB,           KC_Q,        KC_W,          KC_E,    KC_R,    KC_T, TT(SYMB),
+        CTL_T(KC_ESC),    KC_A,        KC_S,          KC_D,    KC_F,    KC_G,
+        KC_LSFT,          CTL_T(KC_Z), KC_X,          KC_C,    KC_V,    KC_B, TG(COLM),
+        LT(SYMB, KC_GRV), KC_GRV,      LALT(KC_LSFT), KC_LEFT, KC_RGHT,
+        KC_LCTL,          KC_LALT,
+        KC_HOME,
+        KC_BSPC,          ALT_T(KC_DEL),      GUI_T(KC_END),
+
+        // right hand
+        KC_NO,          KC_6,          KC_7,    KC_8,    KC_9,              KC_0,    KC_MINS,
+        TG(GAME),       KC_Y,          KC_U,    KC_I,    KC_O,              KC_P,    KC_BSLS,
+        KC_H,           KC_J,          KC_K,    KC_L,    LT(MDIA, KC_SCLN), KC_QUOT,
+        TG(COLM),       KC_N,          KC_M,    KC_UP,   KC_DOT,            KC_SLSH, KC_RSFT,
+        KC_LEFT,        KC_DOWN,       KC_RGHT, KC_RBRC, KC_COMM,
         KC_RALT,        KC_RCTL,
         KC_PGUP,
         GUI_T(KC_PGDN), KC_ENT,        KC_SPC
