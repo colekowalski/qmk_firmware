@@ -33,7 +33,7 @@ static void get_visualizer_layer_and_color(visualizer_state_t* state) {
         state->layer_text = "Game";
     } else if (state->status.layer & (1 << ARROW)) {
         state->layer_text = "Arrow";
-    } else if (state->status.layer & (1 << FKEYS)) {
+    } else if (state->status.layer & (1 << FNKEYS)) {
         state->layer_text = "F1-F12";
     } else if (state->status.layer & (1 << COLMACK)) {
         state->target_lcd_color = LCD_COLOR(168, saturation, 0xFF);

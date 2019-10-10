@@ -3,9 +3,8 @@
 
 #define QWERTY 0
 #define COLMACK 1
-#define FKEYS 2
-#define ARROW 3
-#define GAME 4
-#define FNKEYS 5
+#define ARROW 2
+#define GAME 3
+#define FNKEYS 4
 
 #endif
