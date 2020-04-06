@@ -5,6 +5,6 @@
 #define COLMACK 1
 #define ARROW 2
 #define GAME 3
-#define FNKEYS 4
+#define FKEYS 4
 
 #endif
